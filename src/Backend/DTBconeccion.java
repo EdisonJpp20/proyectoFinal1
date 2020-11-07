@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Backend;
 
 import com.mysql.jdbc.Connection;
@@ -19,7 +14,7 @@ public class DTBconeccion {
     private static String drive = "com.mysql.jdbc.Driver";
     private static String user = "root";
     private static String password = "";
-    private static String url = "jdbc:mysql://localhost:3306/tarea6";
+    private static String url = "jdbc:mysql://localhost:3306/proyectoFinal";
 
     public  void connectar(){
         connect = null ;

@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package proyectofinal1;
 
-/**
- *
- * @author edisonjpp
- */
+package proyectofinal1;
+import Backend.DTBconeccion ; 
+import Frontend.Login.Login; 
+        
+
 public class ProyectoFinal1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+               DTBconeccion connectToDTB = new DTBconeccion();
+               connectToDTB.connectar();
+               Login login = new Login();
     }
-    
 }
