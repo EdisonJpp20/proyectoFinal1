@@ -6,6 +6,7 @@
 package Frontend.Login;
 
 import Backend.BotConsultas.BootConsultas;
+import Frontend.MuroDelCliente.MuroDelCliente;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
  * @author edisonjpp
  */
 public class Login extends javax.swing.JFrame {
+
     public Login() {
         initComponents();
         setDefaultCloseOperation(this.EXIT_ON_CLOSE);
@@ -25,24 +27,33 @@ public class Login extends javax.swing.JFrame {
         if (rSPasswordMaterialIcon1.getText().length() < 1 || rSTextFieldMaterialIcon1.getText().length() < 1) {
             JOptionPane.showMessageDialog(this, "Favor de llenar todos los campos");
         } else {
-            BootConsultas consulta = new BootConsultas("SELECT * FROM registro_admin where nombre_usuario = 'edison' and pass = 'edison20202'");
+            String query = "SELECT * FROM registro_admin\n"
+                    + "WHERE nombre_usuario = " + "'" + rSTextFieldMaterialIcon1.getText() + "'\n"
+                    + "AND pass = "+ " '"+rSPasswordMaterialIcon1.getText() + "'";
+
+            BootConsultas consulta = new BootConsultas(query);
 
             if (consulta.validarUsuario() == true) {
 
                 ArrayList dataCruda = consulta.getData();
                 hacerLogin(dataCruda);
-
             }
 
         }
     }
 
     private void hacerLogin(ArrayList data) {
-        if (rSTextFieldMaterialIcon1.getText().equals(data.get(1)) && rSPasswordMaterialIcon1.getText().equals(data.get(2))) {
-            JOptionPane.showMessageDialog(this, "Haz iniciado session correctamente");
+
+        if (data.size() > 0) {
+
+            if (rSTextFieldMaterialIcon1.getText().equals(data.get(1)) && rSPasswordMaterialIcon1.getText().equals(data.get(2))) {
+                JOptionPane.showMessageDialog(this, "Haz iniciado session correctamente");
+                MuroDelCliente muro = new MuroDelCliente();
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Datos Incorrectos!");
         }
+
     }
 
     /**
@@ -207,7 +218,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_rSTextFieldMaterialIcon1ActionPerformed
 
     private void rSButtonShape1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonShape1ActionPerformed
-      this.verificarCampos();
+        this.verificarCampos();
     }//GEN-LAST:event_rSButtonShape1ActionPerformed
 
     /**
