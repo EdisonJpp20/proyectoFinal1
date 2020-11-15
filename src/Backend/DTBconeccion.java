@@ -16,7 +16,7 @@ public class DTBconeccion {
     private static String password = "";
     private static String url = "jdbc:mysql://localhost:3306/proyectoFinal";
 
-    public  void connectar(){
+    public static  void connectar(){
         connect = null ;
         try{
             Class.forName(drive);
@@ -32,7 +32,7 @@ public class DTBconeccion {
         }
     }
 
-    public Connection getConeccion(){
+    public static Connection getConeccion(){
         return  connect;
     }
 
@@ -44,7 +44,7 @@ public class DTBconeccion {
             alert("No se desconecto.");
     }
 
-    void alert(String message){
+   static void alert(String message){
         JOptionPane.showMessageDialog(null , message);
     }
 

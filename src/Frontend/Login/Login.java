@@ -5,20 +5,21 @@
  */
 package Frontend.Login;
 
-import Backend.BotConsultas.BootConsultas;
 import Frontend.MuroDelCliente.MuroDelCliente;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
+import InstanciaADMIN.InstanciaADMIN ; 
 /**
  *
  * @author edisonjpp
  */
 public class Login extends javax.swing.JFrame {
-
+ 
+    
     public Login() {
         initComponents();
         setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+         this.setLocationRelativeTo(null);
         setVisible(true);
 
     }
@@ -31,11 +32,10 @@ public class Login extends javax.swing.JFrame {
                     + "WHERE nombre_usuario = " + "'" + rSTextFieldMaterialIcon1.getText() + "'\n"
                     + "AND pass = "+ " '"+rSPasswordMaterialIcon1.getText() + "'";
 
-            BootConsultas consulta = new BootConsultas(query);
-
-            if (consulta.validarUsuario() == true) {
-
-                ArrayList dataCruda = consulta.getData();
+//            BootConsultas consulta = new BootConsultas(query);
+            
+            if (InstanciaADMIN.Bot.validarUsuario(query)) {
+                ArrayList dataCruda = InstanciaADMIN.Bot.getData();
                 hacerLogin(dataCruda);
             }
 
@@ -48,12 +48,13 @@ public class Login extends javax.swing.JFrame {
 
             if (rSTextFieldMaterialIcon1.getText().equals(data.get(1)) && rSPasswordMaterialIcon1.getText().equals(data.get(2))) {
                 JOptionPane.showMessageDialog(this, "Haz iniciado session correctamente");
-                MuroDelCliente muro = new MuroDelCliente();
+                this.setVisible(false);
+                InstanciaADMIN.MuroDelCliente = new MuroDelCliente(1);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Datos Incorrectos!");
         }
-
+        
     }
 
     /**
