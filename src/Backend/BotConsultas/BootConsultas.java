@@ -13,6 +13,7 @@ public class BootConsultas {
     static ArrayList<String> data = new ArrayList<String>();
     static ArrayList<Object[]> dataProducto = new ArrayList<Object[]>();
     static ArrayList<String>  dataCliente = new ArrayList<String>();
+    static ArrayList<Object[]> dataClienteOrClientes = new ArrayList<Object[]>();
 
     static PreparedStatement ps;
     static ResultSet rs;
@@ -88,6 +89,24 @@ public class BootConsultas {
         }
 
     }
+    
+        public static boolean getClientes(String query) {
+        try {
+            ps = (PreparedStatement) coneccion.getConeccion().prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String[] dataCruda = {String.valueOf(rs.getString("id")), String.valueOf(rs.getString("nombre")), String.valueOf(rs.getString("telefono")), String.valueOf(rs.getString("email"))};
+                dataClienteOrClientes.add(dataCruda);
+            }
+
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
+    }
 
     public  ArrayList getData() {
         return this.data;
@@ -99,6 +118,10 @@ public class BootConsultas {
 
     public ArrayList getDataProducto() {
         return this.dataProducto;
+    }
+    
+    public ArrayList getDataClienteOrClientes(){
+        return this.dataClienteOrClientes; 
     }
 
 }

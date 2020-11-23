@@ -50,6 +50,8 @@ public class EditarCliente extends javax.swing.JPanel {
             String query = "UPDATE cliente SET nombre = '" + nombre + "' ,email = '" + email + "', telefono = '" + telefono + "' WHERE id=" + id;
             if (InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)) {
                 InstanciaADMIN.MuroDelCliente.jLabel2.setText(nombre);
+                InstanciaADMIN.MuroDelCliente.jLabel6.setText(telefono);
+                InstanciaADMIN.MuroDelCliente.jLabel7.setText(email);
                 InstanciaADMIN.MuroDelCliente.dataCliente.set(1, nombre);
                 alerta("Editado correctamente!");
                 cerrar();

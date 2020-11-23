@@ -5,7 +5,8 @@
  */
 package Frontend.Login;
 
-import Frontend.MuroDelCliente.MuroDelCliente;
+import Frontend.Inicio.Inicioo;
+import Frontend.Registro.Registro;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import InstanciaADMIN.InstanciaADMIN ; 
@@ -49,7 +50,8 @@ public class Login extends javax.swing.JFrame {
             if (rSTextFieldMaterialIcon1.getText().equals(data.get(1)) && rSPasswordMaterialIcon1.getText().equals(data.get(2))) {
                 JOptionPane.showMessageDialog(this, "Haz iniciado session correctamente");
                 this.setVisible(false);
-                InstanciaADMIN.MuroDelCliente = new MuroDelCliente(1);
+                InstanciaADMIN.Inicio = new Inicioo(); 
+//                InstanciaADMIN.MuroDelCliente = new MuroDelCliente(1);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Datos Incorrectos!");
@@ -101,6 +103,11 @@ public class Login extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/anadir.png"))); // NOI18N
         jLabel4.setText("Registrarte... ");
@@ -215,12 +222,16 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rSTextFieldMaterialIcon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSTextFieldMaterialIcon1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_rSTextFieldMaterialIcon1ActionPerformed
 
     private void rSButtonShape1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonShape1ActionPerformed
         this.verificarCampos();
     }//GEN-LAST:event_rSButtonShape1ActionPerformed
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        this.dispose();
+        InstanciaADMIN.Registro = new Registro();
+    }//GEN-LAST:event_jPanel3MouseClicked
 
     /**
      * @param args the command line arguments

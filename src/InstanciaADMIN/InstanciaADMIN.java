@@ -7,11 +7,13 @@ package InstanciaADMIN;
 
 import Backend.BotConsultas.BootConsultas;
 import Backend.DTBconeccion;
+import Frontend.Inicio.Inicioo;
 import Frontend.Login.Login;
 import Frontend.MuroDelCliente.CrearProductos;
 import Frontend.MuroDelCliente.DialogCrearProducto;
 import Frontend.MuroDelCliente.EditarClienteDialog;
 import Frontend.MuroDelCliente.MuroDelCliente;
+import Frontend.Registro.Registro;
 
 /**
  *
@@ -30,4 +32,7 @@ public class InstanciaADMIN {
     public static DialogCrearProducto DialogCrearProducto;
     
     public static EditarClienteDialog EditarClienteDialog; 
+    
+    public static Inicioo Inicio; 
+     public static Registro Registro ; 
 }
