@@ -7,6 +7,7 @@ package Frontend.Registro;
 
 import Frontend.Login.Login;
 import InstanciaADMIN.InstanciaADMIN;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,12 +65,13 @@ public class Registro extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(102, 153, 255));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Dubai Medium", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Registro de Administradores.____");
 
@@ -81,6 +83,7 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Volver...");
 
@@ -93,7 +96,7 @@ public class Registro extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +115,7 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -121,15 +124,16 @@ public class Registro extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 44, Short.MAX_VALUE))
+                .addGap(0, 32, Short.MAX_VALUE))
         );
 
         jLabel1.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel1.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 204, 255));
         jLabel1.setText("Usuario:");
 
         PassField.setForeground(new java.awt.Color(0, 204, 255));
+        PassField.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         PassField.setPlaceholder("Escribe tu contraseña");
         PassField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +142,8 @@ public class Registro extends javax.swing.JFrame {
         });
 
         TxtUser.setBorder(null);
-        TxtUser.setForeground(new java.awt.Color(102, 153, 255));
+        TxtUser.setForeground(new java.awt.Color(0, 204, 255));
+        TxtUser.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         TxtUser.setPlaceholder("Escribe tu usuario");
         TxtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +152,7 @@ public class Registro extends javax.swing.JFrame {
         });
 
         PassFieldC.setForeground(new java.awt.Color(0, 204, 255));
+        PassFieldC.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         PassFieldC.setPlaceholder("Confirma tu contraseña");
         PassFieldC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,22 +161,23 @@ public class Registro extends javax.swing.JFrame {
         });
 
         jLabel2.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 204, 255));
         jLabel2.setText("Telefono:");
 
         jLabel3.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 204, 255));
         jLabel3.setText("Confirmar contraseña:");
 
         jLabel4.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 204, 255));
         jLabel4.setText("Contraseña:");
 
         TxtTel.setBorder(null);
         TxtTel.setForeground(new java.awt.Color(0, 204, 255));
+        TxtTel.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         TxtTel.setPlaceholder("Escribe tu teléfono");
         TxtTel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +187,7 @@ public class Registro extends javax.swing.JFrame {
 
         BtnR.setBackground(new java.awt.Color(102, 153, 255));
         BtnR.setText("Registrar");
+        BtnR.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         BtnR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnRActionPerformed(evt);
@@ -198,10 +206,10 @@ public class Registro extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
-                        .addGap(147, 147, 147)
+                        .addGap(127, 127, 127)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -222,7 +230,7 @@ public class Registro extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -272,39 +280,46 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtTelActionPerformed
 
     private void BtnRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRActionPerformed
-//       RegistroMethodsSql modSql = new RegistroMethodsSql();
-//      
-//       Admins mod = new Admins();
-//       
-//       String pass = new String(PassField.getPassword());
-//       String passCon = new String(PassFieldC.getPassword());
-//       if(TxtUser.equals("") || pass.equals("") || passCon.equals("") || TxtTel.equals("")){
-//          
-//            JOptionPane.showMessageDialog(null, "Hay campos vacios");
-//        }
-//            
-//        if(pass.equals(passCon)){
-//            if(modSql.existeUsuario(TxtUser.getText()) == 0){
-//                String nuevoPass = Hash.sha1(pass);
-//
-//                mod.setNombre_usuario(TxtUser.getText());
-//                mod.setPass(nuevoPass);
-//                mod.setTelefono(TxtTel.getText());
-//
-//
-//                if(modSql.registrar(mod)){
-//                    JOptionPane.showMessageDialog(null, "Registro guardado");
-//                    limpiar();
-//                }else{
-//                    JOptionPane.showMessageDialog(null, "Error al registrar");
-//                }
-//            }else{
-//                JOptionPane.showMessageDialog(null, "El usuario ya existe");
-//            }
-//        }else{
-//            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-//        }
-           
+     
+       String user = TxtUser.getText();
+       String teI = TxtTel.getText();
+       String pass = new String(PassField.getPassword());
+       String passCon = new String(PassFieldC.getPassword());
+       
+       if(TxtUser.equals("") || pass.equals("") || passCon.equals("") || TxtTel.equals("")){
+          
+            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+        }
+       
+       String query = "INSERT INTO registro_admin (nombre_usuario, pass, telefono)\n"
+        + " VALUES ('"+ user + "','" + pass + "' ,'" + teI + "')";  
+       String queryVa = "SELECT nombre_usuario FROM registro_admin WHERE nombre_usuario = '"+ user + "' ";
+       
+       
+        if(pass.equals(passCon)){ 
+            
+            if(InstanciaADMIN.Bot.validarUsuario(queryVa) == true){
+                
+                if(InstanciaADMIN.Bot.getData().isEmpty()){
+                    
+                    if(InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query) == true){
+                       Alerta("Registrado con exito");
+                       limpiar();
+                       
+                    }else{
+                       JOptionPane.showMessageDialog(null, "Error de registro");
+                    }
+                }else  
+                    JOptionPane.showMessageDialog(null, "El usuario ya existe");
+                    limpiar();
+            }else{
+                JOptionPane.showMessageDialog(null, "El usuario ya existe");
+                limpiar();
+            }        
+        }else{
+            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+        }       
+        
        
     }//GEN-LAST:event_BtnRActionPerformed
 
@@ -317,10 +332,12 @@ public class Registro extends javax.swing.JFrame {
         TxtUser.setText("");
         TxtTel.setText("");
         PassField.setText("");
-        
+        PassFieldC.setText("");
         
     }
-    
+    public void Alerta(String mensaje){
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
     
     /**
      * @param args the command line arguments

@@ -34,5 +34,6 @@ public class InstanciaADMIN {
     public static EditarClienteDialog EditarClienteDialog; 
     
     public static Inicioo Inicio; 
-     public static Registro Registro ; 
+    
+    public static Registro Registro ; 
 }

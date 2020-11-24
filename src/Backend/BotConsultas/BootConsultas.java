@@ -41,10 +41,10 @@ public class BootConsultas {
 
             if (rs.next()) {
                 String[] dataCruda = {String.valueOf(rs.getString(1)), String.valueOf(rs.getString(2)), String.valueOf(rs.getString(3)), String.valueOf(rs.getString(4))};
-                data.add(dataCruda[0]);
-                data.add(dataCruda[1]);
-                data.add(dataCruda[2]);
-                data.add(dataCruda[3]);
+                  data.add(dataCruda[0]);
+                  data.add(dataCruda[0]);
+                  data.add(dataCruda[2]);
+                  data.add(dataCruda[3]);
             }
 
             return true;

@@ -13,7 +13,7 @@ public class DTBconeccion {
     private  static Connection connect ;
     private static String drive = "com.mysql.jdbc.Driver";
     private static String user = "root";
-    private static String password = "";
+    private static String password = "SnapDragon>Exynos%^$020206";
     private static String url = "jdbc:mysql://localhost:3306/proyectoFinal";
 
     public static  void connectar(){
