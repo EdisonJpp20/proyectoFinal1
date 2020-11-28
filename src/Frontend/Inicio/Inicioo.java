@@ -395,6 +395,7 @@ public class Inicioo extends javax.swing.JFrame {
 
     private void rSButtonMaterialTwo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialTwo1ActionPerformed
        this.dispose();
+
        InstanciaADMIN.Login =  new Login(); 
     }//GEN-LAST:event_rSButtonMaterialTwo1ActionPerformed
 
