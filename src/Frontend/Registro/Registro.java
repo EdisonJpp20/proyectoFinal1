@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Huáscar
  */
-public class Registro extends javax.swing.JFrame {
+public class Registro extends javax.swing.JFrame{
 
     /**
      * Creates new form Registro
@@ -286,7 +286,7 @@ public class Registro extends javax.swing.JFrame {
        String pass = new String(PassField.getPassword());
        String passCon = new String(PassFieldC.getPassword());
        
-       if(TxtUser.equals("") || pass.equals("") || passCon.equals("") || TxtTel.equals("")){
+        if(TxtUser.equals("") || pass.equals("") || passCon.equals("") || TxtTel.equals("")){
           
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }
@@ -307,17 +307,18 @@ public class Registro extends javax.swing.JFrame {
                        limpiar();
                        
                     }else{
-                       JOptionPane.showMessageDialog(null, "Error de registro");
+                       Alerta("Error de registro");
                     }
                 }else  
-                    JOptionPane.showMessageDialog(null, "El usuario ya existe");
-//                    limpiar();
+                    Alerta("El usuario ya existe");
+                    limpiar();
+
             }else{
-                JOptionPane.showMessageDialog(null, "El usuario ya existe");
+                Alerta("El usuario ya existe");
                 limpiar();
             }        
         }else{
-            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+            Alerta("Las contraseñas no coinciden");
         }       
         
        

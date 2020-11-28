@@ -7,6 +7,7 @@ package Frontend.Inicio;
 
 import Frontend.Login.Login;
 import Frontend.Registro.Registro;
+import Frontend.TablaProductos.Productoss;
 import java.awt.Dimension;
 import InstanciaADMIN.InstanciaADMIN ; 
 
@@ -125,6 +126,11 @@ public class Inicioo extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(0, 204, 255));
         jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.cyan, java.awt.Color.cyan, java.awt.Color.cyan, java.awt.Color.cyan));
+        jPanel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel12MouseClicked(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/inventario.png"))); // NOI18N
 
@@ -249,10 +255,12 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Articulos:");
         jPanel19.add(jLabel19);
-        jLabel19.setBounds(530, 80, 72, 30);
+        jLabel19.setBounds(520, 70, 72, 30);
 
+        textField3.setEditable(false);
         textField3.setBackground(new java.awt.Color(51, 102, 255));
-        textField3.setForeground(new java.awt.Color(0, 0, 0));
+        textField3.setBorder(null);
+        textField3.setForeground(new java.awt.Color(255, 255, 255));
         textField3.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         textField3.setPlaceholder("");
         textField3.addActionListener(new java.awt.event.ActionListener() {
@@ -261,20 +269,22 @@ public class Inicioo extends javax.swing.JFrame {
             }
         });
         jPanel19.add(textField3);
-        textField3.setBounds(670, 70, 120, 40);
+        textField3.setBounds(620, 70, 40, 30);
 
         jLabel17.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Presupuesto:");
         jPanel19.add(jLabel17);
-        jLabel17.setBounds(530, 110, 120, 30);
+        jLabel17.setBounds(500, 100, 100, 30);
 
+        textField1.setEditable(false);
         textField1.setBackground(new java.awt.Color(51, 102, 255));
+        textField1.setBorder(null);
         textField1.setForeground(new java.awt.Color(0, 0, 0));
         textField1.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         textField1.setPlaceholder("");
         jPanel19.add(textField1);
-        textField1.setBounds(670, 110, 120, 30);
+        textField1.setBounds(620, 110, 80, 30);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/shutdown.png"))); // NOI18N
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -286,6 +296,11 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel10.setBounds(750, 0, 50, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Minmize.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         jPanel19.add(jLabel1);
         jLabel1.setBounds(700, 0, 50, 40);
 
@@ -315,6 +330,7 @@ public class Inicioo extends javax.swing.JFrame {
         rSButtonMaterialTwo1.setBackground(new java.awt.Color(255, 0, 0));
         rSButtonMaterialTwo1.setText("Salir");
         rSButtonMaterialTwo1.setBackgroundHover(new java.awt.Color(255, 51, 51));
+        rSButtonMaterialTwo1.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         rSButtonMaterialTwo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonMaterialTwo1ActionPerformed(evt);
@@ -326,6 +342,7 @@ public class Inicioo extends javax.swing.JFrame {
         rSButtonMaterialTwo2.setBackground(new java.awt.Color(0, 204, 255));
         rSButtonMaterialTwo2.setText("Admin info");
         rSButtonMaterialTwo2.setBackgroundHover(new java.awt.Color(102, 153, 255));
+        rSButtonMaterialTwo2.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jPanel20.add(rSButtonMaterialTwo2);
         rSButtonMaterialTwo2.setBounds(10, 370, 170, 50);
 
@@ -408,6 +425,14 @@ public class Inicioo extends javax.swing.JFrame {
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
         InstanciaADMIN.Registro = new Registro();
     }//GEN-LAST:event_jLabel26MouseClicked
+
+    private void jPanel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseClicked
+       InstanciaADMIN.Productoss = new Productoss();
+    }//GEN-LAST:event_jPanel12MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+       // this.JFrame.setState(JFrame.ICONIFIED);eso a dejarlo asi por ahora yes ? 
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments

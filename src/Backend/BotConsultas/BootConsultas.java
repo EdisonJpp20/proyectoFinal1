@@ -42,7 +42,7 @@ public class BootConsultas {
             if (rs.next()) {
                 String[] dataCruda = {String.valueOf(rs.getString(1)), String.valueOf(rs.getString(2)), String.valueOf(rs.getString(3)), String.valueOf(rs.getString(4))};
                   data.add(dataCruda[0]);
-                  data.add(dataCruda[0]);
+                  data.add(dataCruda[1]);
                   data.add(dataCruda[2]);
                   data.add(dataCruda[3]);
             }
@@ -105,8 +105,43 @@ public class BootConsultas {
             System.out.println(e);
             return false;
         }
+    }
+        
+    public static boolean getProdcutoProductos(String query) {
+        try {
+            ps = (PreparedStatement) coneccion.getConeccion().prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                String nombreProducto = rs.getString("nombre_producto");
+                String validoHasta = rs.getString("validoHasta");
+
+                int costoInicial = rs.getInt("costoInicial");
+                int costoFinal = rs.getInt("costoFinal");
+                int clienteId = rs.getInt("clienteId");
+                int interesPorSemana = rs.getInt("interesPorSemana");
+                int id = rs.getInt("productoId");
+
+                Object[] dataCrudaProducto;
+
+                dataCrudaProducto = (Object[]) new Object[]{id, nombreProducto, validoHasta,interesPorSemana, costoInicial, costoFinal, clienteId};
+                dataProducto.add(dataCrudaProducto);
+                System.out.println(nombreProducto);
+                
+            }
+
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
 
     }
+
+    
+        
+        
 
     public  ArrayList getData() {
         return this.data;

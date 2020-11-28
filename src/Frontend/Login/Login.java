@@ -46,12 +46,16 @@ public class Login extends javax.swing.JFrame {
     private void hacerLogin(ArrayList data) {
 
         if (data.size() > 0) {
-
+                System.out.println(" " + data);
+                 System.out.println(" " + data.get(1));
+                  System.out.println(" " + data.get(2));
             if (rSTextFieldMaterialIcon1.getText().equals(data.get(1)) && rSPasswordMaterialIcon1.getText().equals(data.get(2))) {
                 JOptionPane.showMessageDialog(this, "Haz iniciado session correctamente");
                 this.setVisible(false);
                 InstanciaADMIN.Inicio = new Inicioo(); 
 //                InstanciaADMIN.MuroDelCliente = new MuroDelCliente(1);
+            }else{
+                JOptionPane.showMessageDialog(this, "hola");                        
             }
         } else {
             JOptionPane.showMessageDialog(null, "Datos Incorrectos!");

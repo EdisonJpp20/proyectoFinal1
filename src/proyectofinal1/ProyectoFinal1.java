@@ -8,10 +8,10 @@ import InstanciaADMIN.InstanciaADMIN ;
 public class ProyectoFinal1 {
     public static Login login;
     public static void main(String[] args) {
-              InstanciaADMIN.coneccion  = new DTBconeccion();
-               InstanciaADMIN.coneccion.connectar();
-               InstanciaADMIN.Bot = new BootConsultas();
-               InstanciaADMIN.Login = new Login();
+        InstanciaADMIN.coneccion  = new DTBconeccion();
+        InstanciaADMIN.coneccion.connectar();
+        InstanciaADMIN.Bot = new BootConsultas();
+        InstanciaADMIN.Login = new Login();
                
     }
 }
