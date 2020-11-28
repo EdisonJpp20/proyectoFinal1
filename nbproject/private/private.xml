@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/Login/Login.java</file>
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/Inicio/Inicioo.java</file>
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Backend/DTBconeccion.java</file>
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/Registro/Registro.java</file>
+=======
+            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/TablaProductos/Productos.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/MuroDelCliente/DialogCrearProducto.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Backend/BotConsultas/BootConsultas.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/Registro/MetodsRegistro.java</file>
+>>>>>>> ba9cc33e97b174ac75592e73b05d421c415cb7a1
         </group>
     </open-files>
 </project-private>

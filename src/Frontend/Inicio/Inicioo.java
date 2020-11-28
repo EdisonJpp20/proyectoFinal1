@@ -6,6 +6,7 @@
 package Frontend.Inicio;
 
 import Frontend.Login.Login;
+import Frontend.Registro.Registro;
 import java.awt.Dimension;
 import InstanciaADMIN.InstanciaADMIN ; 
 
@@ -248,7 +249,7 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Articulos:");
         jPanel19.add(jLabel19);
-        jLabel19.setBounds(530, 80, 82, 30);
+        jLabel19.setBounds(530, 80, 72, 30);
 
         textField3.setBackground(new java.awt.Color(51, 102, 255));
         textField3.setForeground(new java.awt.Color(0, 0, 0));
@@ -288,11 +289,11 @@ public class Inicioo extends javax.swing.JFrame {
         jPanel19.add(jLabel1);
         jLabel1.setBounds(700, 0, 50, 40);
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dubai Medium", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("REAL NOMBRE EMPRESA");
         jPanel19.add(jLabel3);
-        jLabel3.setBounds(20, 20, 330, 30);
+        jLabel3.setBounds(20, 20, 330, 42);
 
         bigpane.add(jPanel19);
         jPanel19.setBounds(210, 0, 810, 150);
@@ -303,6 +304,11 @@ public class Inicioo extends javax.swing.JFrame {
         jPanel20.setLayout(null);
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Addadmin.png"))); // NOI18N
+        jLabel26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel26MouseClicked(evt);
+            }
+        });
         jPanel20.add(jLabel26);
         jLabel26.setBounds(40, 0, 120, 120);
 
@@ -323,17 +329,17 @@ public class Inicioo extends javax.swing.JFrame {
         jPanel20.add(rSButtonMaterialTwo2);
         rSButtonMaterialTwo2.setBounds(10, 370, 170, 50);
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Telefono Admin");
         jPanel20.add(jLabel2);
         jLabel2.setBounds(40, 160, 150, 16);
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre del AMDMIN");
         jPanel20.add(jLabel7);
-        jLabel7.setBounds(30, 140, 150, 17);
+        jLabel7.setBounds(30, 140, 150, 24);
         jPanel20.add(jSeparator1);
         jSeparator1.setBounds(10, 220, 210, 30);
 
@@ -361,7 +367,7 @@ public class Inicioo extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -398,6 +404,10 @@ public class Inicioo extends javax.swing.JFrame {
 
        InstanciaADMIN.Login =  new Login(); 
     }//GEN-LAST:event_rSButtonMaterialTwo1ActionPerformed
+
+    private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
+        InstanciaADMIN.Registro = new Registro();
+    }//GEN-LAST:event_jLabel26MouseClicked
 
     /**
      * @param args the command line arguments
