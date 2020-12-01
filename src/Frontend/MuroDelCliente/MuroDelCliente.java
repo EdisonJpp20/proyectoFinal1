@@ -7,6 +7,7 @@ package Frontend.MuroDelCliente;
 
 //import Backend.BotConsultas.BootConsultas;
 import Backend.BotConsultas.BootConsultas;
+import Frontend.ClientesView.ClientesMain;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
@@ -30,6 +31,7 @@ public class MuroDelCliente extends javax.swing.JFrame implements ClienteMuroF {
         mostrarDatos();
         setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+//        setUndecorated(true);
         this.setVisible(true);
     }
 
@@ -374,6 +376,11 @@ public class MuroDelCliente extends javax.swing.JFrame implements ClienteMuroF {
         rSButtonMaterialTwo4.setText("Eliminar cliente");
 
         jPanel4.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Volver atras");
@@ -543,6 +550,11 @@ public class MuroDelCliente extends javax.swing.JFrame implements ClienteMuroF {
     private void rSButtonMaterialTwo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialTwo3ActionPerformed
         InstanciaADMIN.EditarClienteDialog = new EditarClienteDialog(this.dataCliente);
     }//GEN-LAST:event_rSButtonMaterialTwo3ActionPerformed
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        this.dispose();
+        InstanciaADMIN.ClientesMain = new ClientesMain();
+    }//GEN-LAST:event_jPanel4MouseClicked
 
     /**
      * @param args the command line arguments

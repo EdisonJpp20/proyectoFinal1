@@ -36,14 +36,14 @@ public class Login extends javax.swing.JFrame {
 //            BootConsultas consulta = new BootConsultas(query);
             
             if (InstanciaADMIN.Bot.validarUsuario(query)) {
-                ArrayList dataCruda = InstanciaADMIN.Bot.getData();
+                ArrayList<String> dataCruda = InstanciaADMIN.Bot.getData();
                 hacerLogin(dataCruda);
             }
 
         }
     }
 
-    private void hacerLogin(ArrayList data) {
+    private void hacerLogin(ArrayList<String> data) {
 
         if (data.size() > 0) {
                 System.out.println(" " + data);
@@ -52,7 +52,7 @@ public class Login extends javax.swing.JFrame {
             if (rSTextFieldMaterialIcon1.getText().equals(data.get(1)) && rSPasswordMaterialIcon1.getText().equals(data.get(2))) {
                 JOptionPane.showMessageDialog(this, "Haz iniciado session correctamente");
                 this.setVisible(false);
-                InstanciaADMIN.Inicio = new Inicioo(); 
+                InstanciaADMIN.Inicio = new Inicioo(Integer.parseInt(data.get(0))); 
 //                InstanciaADMIN.MuroDelCliente = new MuroDelCliente(1);
             }else{
                 JOptionPane.showMessageDialog(this, "hola");                        

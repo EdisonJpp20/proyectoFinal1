@@ -5,11 +5,14 @@
  */
 package Frontend.Inicio;
 
+import Frontend.ClientesView.ClientesMain;
 import Frontend.Login.Login;
 import Frontend.Registro.Registro;
 import Frontend.TablaProductos.Productoss;
 import java.awt.Dimension;
-import InstanciaADMIN.InstanciaADMIN ; 
+import InstanciaADMIN.InstanciaADMIN;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,12 +23,54 @@ public class Inicioo extends javax.swing.JFrame {
     /**
      * Creates new form Inicioo
      */
-    public Inicioo() {
+    public Inicioo(int id) {
+        this.idAdmin = id;
         initComponents();
         bigpane.setPreferredSize(new Dimension(663, 585));
         bigpane.setMinimumSize(new Dimension(663, 585));
         this.setLocationRelativeTo(null);
+        datosDeLaEmpresa();
         setVisible(true);
+    }
+    ArrayList<String> datosDeEmpresa;
+    ArrayList<String> datosDeAdmin;
+    int idAdmin;
+    int countProduct ; 
+
+    private void datosDeLaEmpresa() {
+        String query = "SELECT * FROM tienda_empeno ";
+
+        String query2 = "SELECT * FROM registro_admin WHERE id = " + this.idAdmin;
+
+        String query3 = "SELECT COUNT(*) AS cantidad_productos FROM producto ";
+
+        if (InstanciaADMIN.Bot.getDatosDeLaEmpresa(query) && InstanciaADMIN.Bot.validarUsuario(query2)
+                && InstanciaADMIN.Bot.getCantidadDeProductos(query3)) {
+            
+            datosDeEmpresa = InstanciaADMIN.Bot.getDataEmpresa();
+            datosDeAdmin = InstanciaADMIN.Bot.getData();
+            countProduct = InstanciaADMIN.Bot.getCantidadProductos();
+
+            if (datosDeEmpresa.size() > 0 && datosDeAdmin.size() > 0) {
+                showDatos();
+            } else {
+                JOptionPane.showMessageDialog(this, "no trajo nada");
+            }
+        }
+    }
+
+    private void showDatos() {
+        this.jLabel3.setText(this.datosDeEmpresa.get(1));
+        this.jLabel13.setText(this.datosDeEmpresa.get(3));
+        this.jLabel20.setText(this.datosDeEmpresa.get(4));
+        this.jSpinner1.setValue(Integer.parseInt(this.datosDeEmpresa.get(2)));
+        this.jSpinner2.setValue(this.countProduct);
+        jLabel7.setText(this.datosDeAdmin.get(1));
+        jLabel2.setText(this.datosDeAdmin.get(3));
+    }
+    
+    public void cerrar(boolean cierto){
+        this.setVisible(cierto);
     }
 
     /**
@@ -56,12 +101,15 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        textField3 = new necesario.TextField();
         jLabel17 = new javax.swing.JLabel();
-        textField1 = new necesario.TextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         rSButtonMaterialTwo1 = new RSMaterialComponent.RSButtonMaterialTwo();
@@ -72,6 +120,9 @@ public class Inicioo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -214,6 +265,11 @@ public class Inicioo extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(0, 204, 255));
         jPanel14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.cyan, java.awt.Color.cyan, java.awt.Color.cyan, java.awt.Color.cyan));
+        jPanel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel14MouseClicked(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/client.png"))); // NOI18N
 
@@ -255,36 +311,13 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Articulos:");
         jPanel19.add(jLabel19);
-        jLabel19.setBounds(520, 70, 72, 30);
-
-        textField3.setEditable(false);
-        textField3.setBackground(new java.awt.Color(51, 102, 255));
-        textField3.setBorder(null);
-        textField3.setForeground(new java.awt.Color(255, 255, 255));
-        textField3.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
-        textField3.setPlaceholder("");
-        textField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField3ActionPerformed(evt);
-            }
-        });
-        jPanel19.add(textField3);
-        textField3.setBounds(620, 70, 40, 30);
+        jLabel19.setBounds(460, 70, 110, 30);
 
         jLabel17.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Presupuesto:");
         jPanel19.add(jLabel17);
-        jLabel17.setBounds(500, 100, 100, 30);
-
-        textField1.setEditable(false);
-        textField1.setBackground(new java.awt.Color(51, 102, 255));
-        textField1.setBorder(null);
-        textField1.setForeground(new java.awt.Color(0, 0, 0));
-        textField1.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
-        textField1.setPlaceholder("");
-        jPanel19.add(textField1);
-        textField1.setBounds(620, 110, 80, 30);
+        jLabel17.setBounds(460, 100, 120, 30);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/shutdown.png"))); // NOI18N
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -308,10 +341,36 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("REAL NOMBRE EMPRESA");
         jPanel19.add(jLabel3);
-        jLabel3.setBounds(20, 20, 330, 42);
+        jLabel3.setBounds(20, 20, 330, 30);
+
+        jSpinner1.setEnabled(false);
+        jPanel19.add(jSpinner1);
+        jSpinner1.setBounds(630, 100, 170, 26);
+
+        jSpinner2.setEnabled(false);
+        jPanel19.add(jSpinner2);
+        jSpinner2.setBounds(630, 70, 170, 26);
+
+        jLabel13.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("809 997 3338");
+        jPanel19.add(jLabel13);
+        jLabel13.setBounds(20, 100, 240, 16);
+
+        jLabel14.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("casadeempeno@gmail.com");
+        jPanel19.add(jLabel14);
+        jLabel14.setBounds(20, 70, 240, 22);
+
+        jLabel20.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("jojojoojojojojojojojojoojojojojojojoojojojojojojo");
+        jPanel19.add(jLabel20);
+        jLabel20.setBounds(20, 130, 357, 17);
 
         bigpane.add(jPanel19);
-        jPanel19.setBounds(210, 0, 810, 150);
+        jPanel19.setBounds(210, 0, 810, 160);
 
         jPanel20.setBackground(new java.awt.Color(51, 102, 255));
         jPanel20.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.blue, java.awt.Color.blue, java.awt.Color.blue, java.awt.Color.blue));
@@ -343,6 +402,11 @@ public class Inicioo extends javax.swing.JFrame {
         rSButtonMaterialTwo2.setText("Admin info");
         rSButtonMaterialTwo2.setBackgroundHover(new java.awt.Color(102, 153, 255));
         rSButtonMaterialTwo2.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        rSButtonMaterialTwo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialTwo2ActionPerformed(evt);
+            }
+        });
         jPanel20.add(rSButtonMaterialTwo2);
         rSButtonMaterialTwo2.setBounds(10, 370, 170, 50);
 
@@ -350,18 +414,18 @@ public class Inicioo extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Telefono Admin");
         jPanel20.add(jLabel2);
-        jLabel2.setBounds(40, 160, 150, 16);
+        jLabel2.setBounds(10, 150, 150, 20);
 
-        jLabel7.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre del AMDMIN");
         jPanel20.add(jLabel7);
-        jLabel7.setBounds(30, 140, 150, 24);
+        jLabel7.setBounds(10, 130, 180, 22);
         jPanel20.add(jSeparator1);
         jSeparator1.setBounds(10, 220, 210, 30);
 
         bigpane.add(jPanel20);
-        jPanel20.setBounds(0, 160, 210, 530);
+        jPanel20.setBounds(0, 160, 210, 580);
 
         jPanel1.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -392,6 +456,40 @@ public class Inicioo extends javax.swing.JFrame {
         bigpane.add(jPanel1);
         jPanel1.setBounds(0, 0, 210, 170);
 
+        jPanel2.setBackground(new java.awt.Color(0, 204, 255));
+
+        jLabel21.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("@Edison J. PP");
+
+        jLabel22.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("@Huascar Demanada");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(307, Short.MAX_VALUE)
+                .addComponent(jLabel21)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel22)
+                .addGap(241, 241, 241))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        bigpane.add(jPanel2);
+        jPanel2.setBounds(210, 700, 810, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -402,24 +500,20 @@ public class Inicioo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bigpane, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
+            .addComponent(bigpane, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-      this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField3ActionPerformed
-
     private void rSButtonMaterialTwo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialTwo1ActionPerformed
-       this.dispose();
+        this.dispose();
 
-       InstanciaADMIN.Login =  new Login(); 
+        InstanciaADMIN.Login = new Login();
     }//GEN-LAST:event_rSButtonMaterialTwo1ActionPerformed
 
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
@@ -427,12 +521,22 @@ public class Inicioo extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel26MouseClicked
 
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseClicked
-       InstanciaADMIN.Productoss = new Productoss();
+        InstanciaADMIN.Productoss = new Productoss();
     }//GEN-LAST:event_jPanel12MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-       // this.JFrame.setState(JFrame.ICONIFIED);eso a dejarlo asi por ahora yes ? 
+        // this.JFrame.setState(JFrame.ICONIFIED);eso a dejarlo asi por ahora yes ? 
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void rSButtonMaterialTwo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialTwo2ActionPerformed
+        InstanciaADMIN.MuroADMINDialog = new MuroADMINDialog(this.datosDeAdmin);
+    }//GEN-LAST:event_rSButtonMaterialTwo2ActionPerformed
+
+    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel14MouseClicked
+       InstanciaADMIN.ClientesMain = new ClientesMain();
+       cerrar(false);
+      
+    }//GEN-LAST:event_jPanel14MouseClicked
 
     /**
      * @param args the command line arguments
@@ -464,7 +568,7 @@ public class Inicioo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicioo().setVisible(true);
+                //  new Inicioo().setVisible(true);
             }
         });
     }
@@ -475,12 +579,17 @@ public class Inicioo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
@@ -498,12 +607,13 @@ public class Inicioo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JSpinner jSpinner1;
+    public javax.swing.JSpinner jSpinner2;
     private RSMaterialComponent.RSButtonMaterialTwo rSButtonMaterialTwo1;
     private RSMaterialComponent.RSButtonMaterialTwo rSButtonMaterialTwo2;
-    private necesario.TextField textField1;
-    private necesario.TextField textField3;
     // End of variables declaration//GEN-END:variables
 }

@@ -58,11 +58,21 @@ public class CrearProductos extends javax.swing.JPanel {
 
     void agregarProducto(String[] fiels) {
         int id = InstanciaADMIN.MuroDelCliente.id;
+        int currentPresupuesto = (int) InstanciaADMIN.Inicio.jSpinner1.getValue();
+        int countProducto = (int) InstanciaADMIN.Inicio.jSpinner2.getValue();
+        currentPresupuesto = currentPresupuesto + Integer.parseInt(fiels[3]);
+        countProducto  = countProducto +  1;
+
         String query = " INSERT INTO producto (nombre_producto , validoHasta, interesPorSemana, costoInicial, costoFinal, clienteId ) \n"
-                + " VALUES (' "+ fiels[0] + "','" + fiels[1] + "' ," + Integer.parseInt(fiels[4]) + " ," + Integer.parseInt(fiels[2]) + "," + Integer.parseInt(fiels[3]) + " ," + id + ")";
-        
-        if(InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)){
+                + " VALUES (' " + fiels[0] + "','" + fiels[1] + "' ," + Integer.parseInt(fiels[4]) + " ," + Integer.parseInt(fiels[2]) + "," + Integer.parseInt(fiels[3]) + " ," + id + ")";
+        String query2 = "UPDATE tienda_empeno SET presupuesto = " + currentPresupuesto;
+
+        if (InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)
+                && InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query2)) {
+            InstanciaADMIN.Inicio.jSpinner1.setValue(countProducto);
+            InstanciaADMIN.Inicio.jSpinner2.setValue(currentPresupuesto);
             JOptionPane.showMessageDialog(jPanel5, "Agregado Correctamente");
+
         }
     }
 

@@ -3,23 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/Login/Login.java</file>
+            <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Backend/BotConsultas/BootConsultas.java</file>
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/Inicio/Inicioo.java</file>
+            <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/MuroDelCliente/DialogCrearProducto.java</file>
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Backend/DTBconeccion.java</file>
             <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/Registro/Registro.java</file>
-=======
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/TablaProductos/Productos.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/MuroDelCliente/DialogCrearProducto.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Backend/BotConsultas/BootConsultas.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/Registro/MetodsRegistro.java</file>
->>>>>>> ba9cc33e97b174ac75592e73b05d421c415cb7a1
-=======
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/TablaProductos/Productoss.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/InstanciaADMIN/InstanciaADMIN.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Workspace%20Java/proyectoFinal/proyectoFinal2/src/Frontend/Inicio/Inicioo.java</file>
->>>>>>> 94b6345367cf5f01f8ba0a3618a6e7ceeabd0d8f
+            <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/MuroDelCliente/CrearProductos.java</file>
+            <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/MuroDelCliente/EditarCliente.java</file>
+            <file>file:/Users/edisonjpp/NetBeansProjects/proyectoFinal1/src/Frontend/MuroDelCliente/EditarClienteDialog.java</file>
         </group>
     </open-files>
 </project-private>

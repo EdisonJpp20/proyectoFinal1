@@ -25,7 +25,6 @@ public class DialogCrearProducto extends javax.swing.JDialog {
     }
     
    public void  cerrar (){
-       System.out.println("holaaaa");
            this.dispose();
    }
 }
