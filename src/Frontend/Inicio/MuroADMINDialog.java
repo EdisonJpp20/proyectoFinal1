@@ -19,10 +19,12 @@ public class MuroADMINDialog extends JDialog {
        // this.setPreferredSize(new Dimension(325, 377));
         this.setMinimumSize(new Dimension(325, 385));
         this.setLocationRelativeTo(null);
+        this.setUndecorated(true);
         this.setVisible(true);
+   
     }
     
-    
+
     
     public void cerrar(){
         this.dispose();

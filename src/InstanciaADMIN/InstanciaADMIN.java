@@ -11,6 +11,7 @@ import Frontend.ClientesView.ClientesMain;
 import Frontend.Inicio.Inicioo;
 import Frontend.Inicio.MuroADMINDialog;
 import Frontend.Login.Login;
+import Frontend.MuroDelCliente.Addcliente;
 import Frontend.MuroDelCliente.CrearProductos;
 import Frontend.MuroDelCliente.DialogCrearProducto;
 import Frontend.MuroDelCliente.EditarClienteDialog;
@@ -45,4 +46,6 @@ public class InstanciaADMIN {
     public static MuroADMINDialog MuroADMINDialog ; 
     
     public static ClientesMain ClientesMain ; 
+    
+    public static Addcliente Addcliente;
 }

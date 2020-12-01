@@ -5,6 +5,9 @@ import com.mysql.jdbc.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import InstanciaADMIN.InstanciaADMIN;
+import com.mysql.jdbc.CallableStatement;
+import com.mysql.jdbc.Connection;
+import javax.lang.model.util.Types;
 
 public class BootConsultas {
     
@@ -17,6 +20,7 @@ public class BootConsultas {
     
     static PreparedStatement ps;
     static ResultSet rs;
+    static Connection con;
     static DTBconeccion coneccion = InstanciaADMIN.coneccion;
     
     public static boolean bootAgregarEliminarActualizar(String query) {
@@ -100,6 +104,7 @@ public class BootConsultas {
                     String.valueOf(rs.getString("telefono")), String.valueOf(rs.getString("email")),
                     String.valueOf(rs.getInt("cantidadProdutos"))
                 };
+             
                 dataClienteOrClientes.add(dataCruda);
             }
             
@@ -177,6 +182,24 @@ public class BootConsultas {
             return false;
         }
     }
+    
+//    public static void storedProc(query){
+//        int ifcaret;
+//        int ifcareas;
+//        int xsbytes;
+//        String errbuff;
+//        Connection con = null;
+//        CallableStatement cstmt;
+//        ResultSet rs;
+//       comentalo o borralo VcOoy
+//        cstmt = (CallableStatement) con.prepareCall("CALL DeleteToClienteView ");                
+//                                          // Create a CallableStatement object
+//        cstmt.setString (InstanciaADMIN);                                
+//                                          // Set input parameter (Db2 command) 
+//                               lo haremos con el metodo de 
+//     T aba buscando eI cargador que se me iba a apagar AYYAAYAYAYA OK LIMPIA EL CODE este?
+//        cstmt.close();                                                           
+//    }
     
     public ArrayList getData() {
         return this.data;

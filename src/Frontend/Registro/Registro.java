@@ -41,9 +41,7 @@ public class Registro extends javax.swing.JFrame{
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Out = new RSMaterialComponent.RSButtonMaterialShadow();
         jLabel1 = new javax.swing.JLabel();
         PassField = new necesario.PassField();
         TxtUser = new necesario.TextField();
@@ -52,7 +50,7 @@ public class Registro extends javax.swing.JFrame{
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         TxtTel = new necesario.TextField();
-        BtnR = new newscomponents.RSButtonFlat_new();
+        RegistrarYvalidar = new RSMaterialComponent.RSButtonMaterialTwo();
 
         rSTextFieldIconTwo1.setText("rSTextFieldIconTwo1");
 
@@ -68,45 +66,22 @@ public class Registro extends javax.swing.JFrame{
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 255), null));
 
-        jPanel2.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Dubai Medium", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Dubai Medium", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Registro de Administradores.____");
 
-        jPanel3.setBackground(new java.awt.Color(255, 51, 51));
-        jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
+        Out.setBackground(new java.awt.Color(255, 51, 51));
+        Out.setText("Salir");
+        Out.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        Out.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OutActionPerformed(evt);
             }
         });
-
-        jLabel7.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Volver...");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addContainerGap())
-        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,24 +90,24 @@ public class Registro extends javax.swing.JFrame{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(Out, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 32, Short.MAX_VALUE))
+                    .addComponent(Out, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jLabel1.setBackground(new java.awt.Color(0, 204, 255));
         jLabel1.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 102, 255));
         jLabel1.setText("Usuario:");
 
-        PassField.setForeground(new java.awt.Color(0, 204, 255));
+        PassField.setForeground(new java.awt.Color(51, 102, 255));
         PassField.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         PassField.setPlaceholder("Escribe tu contraseña");
         PassField.addActionListener(new java.awt.event.ActionListener() {
@@ -141,8 +116,8 @@ public class Registro extends javax.swing.JFrame{
             }
         });
 
-        TxtUser.setBorder(null);
-        TxtUser.setForeground(new java.awt.Color(0, 204, 255));
+        TxtUser.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        TxtUser.setForeground(new java.awt.Color(51, 102, 255));
         TxtUser.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         TxtUser.setPlaceholder("Escribe tu usuario");
         TxtUser.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +126,7 @@ public class Registro extends javax.swing.JFrame{
             }
         });
 
-        PassFieldC.setForeground(new java.awt.Color(0, 204, 255));
+        PassFieldC.setForeground(new java.awt.Color(51, 102, 255));
         PassFieldC.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         PassFieldC.setPlaceholder("Confirma tu contraseña");
         PassFieldC.addActionListener(new java.awt.event.ActionListener() {
@@ -162,21 +137,21 @@ public class Registro extends javax.swing.JFrame{
 
         jLabel2.setBackground(new java.awt.Color(0, 204, 255));
         jLabel2.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 204, 255));
+        jLabel2.setForeground(new java.awt.Color(51, 102, 255));
         jLabel2.setText("Telefono:");
 
         jLabel3.setBackground(new java.awt.Color(0, 204, 255));
         jLabel3.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 204, 255));
+        jLabel3.setForeground(new java.awt.Color(51, 102, 255));
         jLabel3.setText("Confirmar contraseña:");
 
         jLabel4.setBackground(new java.awt.Color(0, 204, 255));
         jLabel4.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 204, 255));
+        jLabel4.setForeground(new java.awt.Color(51, 102, 255));
         jLabel4.setText("Contraseña:");
 
         TxtTel.setBorder(null);
-        TxtTel.setForeground(new java.awt.Color(0, 204, 255));
+        TxtTel.setForeground(new java.awt.Color(51, 102, 255));
         TxtTel.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         TxtTel.setPlaceholder("Escribe tu teléfono");
         TxtTel.addActionListener(new java.awt.event.ActionListener() {
@@ -185,12 +160,12 @@ public class Registro extends javax.swing.JFrame{
             }
         });
 
-        BtnR.setBackground(new java.awt.Color(102, 153, 255));
-        BtnR.setText("Registrar");
-        BtnR.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        BtnR.addActionListener(new java.awt.event.ActionListener() {
+        RegistrarYvalidar.setBackground(new java.awt.Color(51, 102, 255));
+        RegistrarYvalidar.setText("Registrar");
+        RegistrarYvalidar.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        RegistrarYvalidar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnRActionPerformed(evt);
+                RegistrarYvalidarActionPerformed(evt);
             }
         });
 
@@ -200,29 +175,30 @@ public class Registro extends javax.swing.JFrame{
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(127, 127, 127)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGap(127, 127, 127)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TxtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(41, 41, 41)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PassFieldC, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PassField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PassField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PassFieldC, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(183, 183, 183)
+                        .addComponent(RegistrarYvalidar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(BtnR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +209,7 @@ public class Registro extends javax.swing.JFrame{
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(TxtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -244,16 +220,18 @@ public class Registro extends javax.swing.JFrame{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(PassFieldC, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(BtnR, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18)
+                .addComponent(RegistrarYvalidar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,25 +240,30 @@ public class Registro extends javax.swing.JFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-//////
+
+    private void OutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OutActionPerformed
+        this.dispose();
+        InstanciaADMIN.Login = new Login();
+    }//GEN-LAST:event_OutActionPerformed
+
     private void PassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PassFieldActionPerformed
-
-    private void PassFieldCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PassFieldCActionPerformed
 
     private void TxtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtUserActionPerformed
 
+    private void PassFieldCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PassFieldCActionPerformed
+
     private void TxtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtTelActionPerformed
 
-    private void BtnRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRActionPerformed
-     
+    private void RegistrarYvalidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarYvalidarActionPerformed
+//       registrarYvalidar();
        String user = TxtUser.getText();
        String teI = TxtTel.getText();
        String pass = new String(PassField.getPassword());
@@ -305,6 +288,8 @@ public class Registro extends javax.swing.JFrame{
                     if(InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query) == true){
                        Alerta("Registrado con exito");
                        limpiar();
+                       this.dispose();
+                       InstanciaADMIN.Login = new Login();
                        
                     }else{
                        Alerta("Error de registro");
@@ -312,23 +297,56 @@ public class Registro extends javax.swing.JFrame{
                 }else  
                     Alerta("El usuario ya existe");
                     limpiar();
-
             }else{
                 Alerta("El usuario ya existe");
                 limpiar();
             }        
         }else{
             Alerta("Las contraseñas no coinciden");
-        }       
-        
-       
-    }//GEN-LAST:event_BtnRActionPerformed
+        }
+    }//GEN-LAST:event_RegistrarYvalidarActionPerformed
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        this.dispose();
-        InstanciaADMIN.Login = new Login();
-    }//GEN-LAST:event_jPanel3MouseClicked
-    
+//    public void registrarYvalidar(){
+//       String user = TxtUser.getText();
+//       String teI = TxtTel.getText();
+//       String pass = new String(PassField.getPassword());
+//       String passCon = new String(PassFieldC.getPassword());
+//       
+//        if(TxtUser.equals("") || pass.equals("") || passCon.equals("") || TxtTel.equals("")){
+//          
+//            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+//        }
+//       
+//       String query = "INSERT INTO registro_admin (nombre_usuario, pass, telefono)\n"
+//        + " VALUES ('"+ user + "','" + pass + "' ,'" + teI + "')";  
+//       
+//       String queryVa = "SELECT nombre_usuario FROM registro_admin WHERE nombre_usuario = '"+ user + "' ";
+//       
+//       
+//        if(pass.equals(passCon)){ 
+//            
+//            if(InstanciaADMIN.Bot.validarUsuario(queryVa) == true){
+//                
+//                if(InstanciaADMIN.Bot.getData().isEmpty()){
+//                    
+//                    if(InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query) == true){
+//                       Alerta("Registrado con exito");
+//                       limpiar();
+//                       
+//                    }else{
+//                       Alerta("Error de registro");
+//                    }
+//                }else  
+//                    Alerta("El usuario ya existe");
+//                    limpiar();
+//            }else{
+//                Alerta("El usuario ya existe");
+//                limpiar();
+//            }        
+//        }else{
+//            Alerta("Las contraseñas no coinciden");
+//        }       
+//    }
     private void limpiar(){
         TxtUser.setText("");
         TxtTel.setText("");
@@ -376,21 +394,19 @@ public class Registro extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private newscomponents.RSButtonFlat_new BtnR;
+    private RSMaterialComponent.RSButtonMaterialShadow Out;
     private necesario.PassField PassField;
     private necesario.PassField PassFieldC;
+    private RSMaterialComponent.RSButtonMaterialTwo RegistrarYvalidar;
     private necesario.TextField TxtTel;
     private necesario.TextField TxtUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private RSMaterialComponent.RSTextFieldIconTwo rSTextFieldIconTwo1;

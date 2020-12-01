@@ -74,168 +74,146 @@ public class Login extends javax.swing.JFrame {
 
         rSAnimation1 = new rojeru_san.complementos.RSAnimation();
         jScrollBar1 = new javax.swing.JScrollBar();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         rSButtonShape1 = new RSMaterialComponent.RSButtonShape();
         rSPasswordMaterialIcon1 = new RSMaterialComponent.RSPasswordMaterialIcon();
         jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         rSTextFieldMaterialIcon1 = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        rSButtonMaterialShadow3 = new RSMaterialComponent.RSButtonMaterialShadow();
+        rSButtonMaterialTwo2 = new RSMaterialComponent.RSButtonMaterialTwo();
+        jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 255, 255), null));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(600, 600));
+        jPanel2.setLayout(null);
 
+        rSButtonShape1.setBackground(new java.awt.Color(51, 102, 255));
+        rSButtonShape1.setBorder(null);
         rSButtonShape1.setText("Entrar");
+        rSButtonShape1.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         rSButtonShape1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonShape1ActionPerformed(evt);
             }
         });
+        jPanel2.add(rSButtonShape1);
+        rSButtonShape1.setBounds(213, 250, 250, 42);
 
+        rSPasswordMaterialIcon1.setColorIcon(new java.awt.Color(51, 102, 255));
+        rSPasswordMaterialIcon1.setColorMaterial(new java.awt.Color(51, 102, 255));
+        rSPasswordMaterialIcon1.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         rSPasswordMaterialIcon1.setPlaceholder("Password");
+        jPanel2.add(rSPasswordMaterialIcon1);
+        rSPasswordMaterialIcon1.setBounds(213, 190, 250, 42);
 
-        jLabel2.setFont(new java.awt.Font("Malayalam Sangam MN", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai Medium", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 102, 255));
         jLabel2.setText("Iniciar Sesion");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(242, 82, 148, 42);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/anadir.png"))); // NOI18N
-        jLabel4.setText("Registrarte... ");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
+        rSTextFieldMaterialIcon1.setForeground(new java.awt.Color(51, 102, 255));
+        rSTextFieldMaterialIcon1.setColorIcon(new java.awt.Color(51, 102, 255));
+        rSTextFieldMaterialIcon1.setColorMaterial(new java.awt.Color(51, 102, 255));
+        rSTextFieldMaterialIcon1.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         rSTextFieldMaterialIcon1.setPlaceholder("Usuario");
         rSTextFieldMaterialIcon1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSTextFieldMaterialIcon1ActionPerformed(evt);
             }
         });
+        jPanel2.add(rSTextFieldMaterialIcon1);
+        rSTextFieldMaterialIcon1.setBounds(213, 142, 250, 42);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rick.gif"))); // NOI18N
+        rSButtonMaterialShadow3.setBackground(new java.awt.Color(255, 51, 51));
+        rSButtonMaterialShadow3.setText("Salir");
+        rSButtonMaterialShadow3.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        rSButtonMaterialShadow3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialShadow3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(rSButtonMaterialShadow3);
+        rSButtonMaterialShadow3.setBounds(540, 0, 160, 40);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 23, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rSTextFieldMaterialIcon1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSPasswordMaterialIcon1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSButtonShape1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(73, 73, 73)))
-                        .addComponent(jLabel5)
-                        .addContainerGap())))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSTextFieldMaterialIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSPasswordMaterialIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSButtonShape1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(24, 24, 24)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        rSButtonMaterialTwo2.setBackground(new java.awt.Color(0, 204, 255));
+        rSButtonMaterialTwo2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMaterialTwo2.setText("Registrate");
+        rSButtonMaterialTwo2.setActionCommand("Regístrate");
+        rSButtonMaterialTwo2.setBackgroundHover(new java.awt.Color(102, 153, 255));
+        rSButtonMaterialTwo2.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        rSButtonMaterialTwo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialTwo2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(rSButtonMaterialTwo2);
+        rSButtonMaterialTwo2.setBounds(270, 310, 130, 40);
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
+
+        jLabel5.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Copyright  @Edison & Huascard 2020");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(229, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(205, 205, 205))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel5)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
+
+        jPanel2.add(jPanel1);
+        jPanel1.setBounds(0, 410, 700, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rSTextFieldMaterialIcon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSTextFieldMaterialIcon1ActionPerformed
-    }//GEN-LAST:event_rSTextFieldMaterialIcon1ActionPerformed
-
     private void rSButtonShape1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonShape1ActionPerformed
         this.verificarCampos();
     }//GEN-LAST:event_rSButtonShape1ActionPerformed
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+    private void rSTextFieldMaterialIcon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSTextFieldMaterialIcon1ActionPerformed
+
+    }//GEN-LAST:event_rSTextFieldMaterialIcon1ActionPerformed
+
+    private void rSButtonMaterialShadow3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialShadow3ActionPerformed
+        System.exit(0);
+
+    }//GEN-LAST:event_rSButtonMaterialShadow3ActionPerformed
+
+    private void rSButtonMaterialTwo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialTwo2ActionPerformed
         this.dispose();
         InstanciaADMIN.Registro = new Registro();
-    }//GEN-LAST:event_jPanel3MouseClicked
+    }//GEN-LAST:event_rSButtonMaterialTwo2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,15 +251,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollBar jScrollBar1;
     private rojeru_san.complementos.RSAnimation rSAnimation1;
+    private RSMaterialComponent.RSButtonMaterialShadow rSButtonMaterialShadow3;
+    private RSMaterialComponent.RSButtonMaterialTwo rSButtonMaterialTwo2;
     private RSMaterialComponent.RSButtonShape rSButtonShape1;
     private RSMaterialComponent.RSPasswordMaterialIcon rSPasswordMaterialIcon1;
     private RSMaterialComponent.RSTextFieldMaterialIcon rSTextFieldMaterialIcon1;
