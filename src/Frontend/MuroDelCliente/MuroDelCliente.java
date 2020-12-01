@@ -553,8 +553,11 @@ public class MuroDelCliente extends javax.swing.JFrame implements ClienteMuroF {
     }//GEN-LAST:event_rSButtonMaterialTwo3ActionPerformed
 
     private void rSButtonMaterialShadow4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialShadow4ActionPerformed
-        this.dispose();
        InstanciaADMIN.ClientesMain = new ClientesMain(); 
+       dataProducto.clear();
+       dataCliente.clear();
+       limpiarTabla();
+       this.dispose();
     }//GEN-LAST:event_rSButtonMaterialShadow4ActionPerformed
 
     /**

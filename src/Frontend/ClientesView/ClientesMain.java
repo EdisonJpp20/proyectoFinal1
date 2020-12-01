@@ -48,10 +48,12 @@ public class ClientesMain extends javax.swing.JFrame {
     }
 
     private void getData() {
-        String query = " SELECT cliente.id, cliente.nombre, cliente.telefono , cliente.email,\n"
-                + " count(producto.clienteId) as cantidadProdutos \n"
-                + "FROM cliente JOIN producto on producto.clienteId = cliente.id \n"
-                + "GROUP BY cliente.id  ORDER BY cantidadProdutos DESC ";
+//        String query = " SELECT cliente.id, cliente.nombre, cliente.telefono , cliente.email,\n"
+//                + " count(producto.clienteId) as cantidadProdutos \n"
+//                + "FROM cliente JOIN producto on producto.clienteId = cliente.id \n"
+//                + "GROUP BY cliente.id  ORDER BY cantidadProdutos DESC ";
+
+        String query = " select * from cliente"; 
         if (InstanciaADMIN.Bot.getClientes(query)) {
             this.dataToShow = InstanciaADMIN.Bot.getDataClienteOrClientes();
             System.out.println("cliente Manin");
@@ -64,16 +66,15 @@ public class ClientesMain extends javax.swing.JFrame {
 
     private void show(ArrayList<String> dataToShows) {
         for (Object g : dataToShows) {
-            Object[] dataOfClients;
-            dataOfClients = (Object[]) g;
-            this.model.addRow(dataOfClients);
+//            Object[] dataOfClients;
+//            dataOfClients = (Object[]) g;
+            this.model.addRow((Object[]) g);
         }
     }
 
     private void goToTheMuro() {
         if (rSTableMetroCustom1.getSelectedRow() != -1) {
-            int index = rSTableMetroCustom1.getSelectedRow();
-            int id = (int) Integer.parseInt((String) String.valueOf((Object) model.getValueAt(index, 0)));
+            int id = (int) Integer.parseInt((String) String.valueOf((Object) model.getValueAt( rSTableMetroCustom1.getSelectedRow(), 0)));
             InstanciaADMIN.MuroDelCliente = new MuroDelCliente(id);
             cerrar(false);
         } else {

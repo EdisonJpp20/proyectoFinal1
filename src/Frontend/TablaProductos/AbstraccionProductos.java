@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import RSMaterialComponent.*;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,21 +19,19 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author Huáscar
  */
-
 public abstract class AbstraccionProductos implements MetodosP {
 
     private static void model(Object object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     BootConsultas Bot = InstanciaADMIN.Bot;
-      // ArrayList<String> dataCliente = new ArrayList<String>(); 
-       
-          
+    // ArrayList<String> dataCliente = new ArrayList<String>(); 
+
     /*    ============================
     METODOS PARA Productoss
-    */
+     */
     public static void limpiarTabla(DefaultTableModel model) {
-        
+
         try {
             int filas = model.getRowCount();
             for (int i = 0; i < filas; i++) {
@@ -42,45 +41,44 @@ public abstract class AbstraccionProductos implements MetodosP {
 //           ("Error al limpiar la tabla.");
         }
     }
-    
+
     public static void mostrarProduct(DefaultTableModel model) {
-          for (Object[] o  :  InstanciaADMIN.Productoss.dataProducto) {
-           model.addRow(o);
-       }         
+        for (Object[] o : InstanciaADMIN.Productoss.dataProducto) {
+            model.addRow(o);
+        }
     }
-    
-    public static void getDataProducto(DefaultTableModel model){
+
+    public static void getDataProducto(DefaultTableModel model) {
         String query = "SELECT * FROM producto ";
-    
-        if(InstanciaADMIN.Bot.getProdcutoProductos(query)){
-            
-            
+
+        if (InstanciaADMIN.Bot.getProdcutoProductos(query)) {
+
             InstanciaADMIN.Productoss.dataProducto = InstanciaADMIN.Bot.getDataProducto();
-            if(dataProducto.size() > 0){
-               AbstraccionProductos.mostrarProduct(model);
-               InstanciaADMIN.Productoss.dataProducto.clear();
-            }else{
-                System.out.println("no tienes productos "); 
+            if (dataProducto.size() > 0) {
+                AbstraccionProductos.mostrarProduct(model);
+                InstanciaADMIN.Productoss.dataProducto.clear();
+            } else {
+                System.out.println("no tienes productos ");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Fallo en la consulta");
-       }
+        }
     }
-    
+
     public static boolean eliminarProducto(RSTableMetroCustom tabe) {
         if (tabe.getSelectedRow() != -1) {
             int index = tabe.getSelectedRow();
             int id = (int) InstanciaADMIN.Productoss.model.getValueAt(index, 0);
             String query = "DELETE FROM producto where productoId =" + id;
-            
+
             if (InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)) {
                 int costoFinal = (int) Integer.valueOf((String) String.valueOf(InstanciaADMIN.Productoss.model.getValueAt(index, 4)));
                 int costoFinalTipo = -costoFinal;
                 InstanciaADMIN.Productoss.model.removeRow(index);
                 InstanciaADMIN.Productoss.dataProducto.remove(index);
                 return true;
-                    
-           } else {
+
+            } else {
                 alerta("No se elimino correctamente");
                 return false;
             }
@@ -90,11 +88,11 @@ public abstract class AbstraccionProductos implements MetodosP {
             return false;
         }
     }
-    
-    public static void alerta(String mensaje){
+
+    public static void alerta(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje);
     }
-    
+
     public static boolean updateProducto(RSTableMetroCustom tabe) {
 
         if (tabe.getSelectedRow() != -1) {
@@ -120,22 +118,18 @@ public abstract class AbstraccionProductos implements MetodosP {
             return false;
         }
     }
-    
-    
-/*  ============================
-    METODOS PARA DialogAñadir
-*/
-    
-    
 
+    /*  ============================
+    METODOS PARA DialogAñadir
+     */
     public static void agregarProducto(String[] fiels) {
-        String query = " INSERT INTO producto (nombre_producto , validoHasta, interesPorSemana, costoInicial, costoFinal ) \n"
-                + " VALUES (' "+ fiels[0] + "','" + fiels[1] + "' ," + Integer.parseInt(fiels[4]) + " ," + Integer.parseInt(fiels[2]) + "," + Integer.parseInt(fiels[3]) + " )";
+        String query = " INSERT INTO producto (nombre_producto , validoHasta, interesPorSemana, costoInicial, costoFinal, clienteId ) \n"
+                + " VALUES (' " + fiels[0] + "','" + fiels[1] + "' ," + Integer.parseInt(fiels[4]) + " ," + Integer.parseInt(fiels[2]) + "," + Integer.parseInt(fiels[3]) + ", "
+                + Integer.parseInt(fiels[5]) + " )";
 //        ," + id + "
-        if(InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)){
+        if (InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)) {
             JOptionPane.showMessageDialog(null, "Agregado Correctamente");
         }
     }
-    
-    
+
 }

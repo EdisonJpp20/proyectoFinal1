@@ -19,12 +19,14 @@ import javax.swing.JOptionPane;
  * @author Huáscar
  */
 public class DialogAñadir extends javax.swing.JDialog {
+
     public static ArrayList dataCliente;
     public static int id;
     private String query;
     BootConsultas Bot = InstanciaADMIN.Bot;
     DefaultComboBoxModel model = new DefaultComboBoxModel();
-    public static ArrayList  dataToShow;
+    public static ArrayList dataToShow;
+
     /**
      * Creates new form DialogAñadir
      */
@@ -34,9 +36,9 @@ public class DialogAñadir extends javax.swing.JDialog {
         getDataClient();
 //        getDataCliente(true);
         setLocationRelativeTo(null);
-        
+
     }
-    
+
     public void validarAndCrear() {
         Date validoHasta;
         String fechasHasta = "";
@@ -53,48 +55,47 @@ public class DialogAñadir extends javax.swing.JDialog {
 
         int costoFinal = interes + costoInicial;
 
-        String[] campos = {nombre, fechasHasta, String.valueOf(costoInicial), String.valueOf(costoFinal), String.valueOf(interes)};
+        String idCliente = String.valueOf(ComboClient.getSelectedItem());
+
+        System.out.println(idCliente);
+
+        String[] campos = {nombre, fechasHasta, String.valueOf(costoInicial), String.valueOf(costoFinal), String.valueOf(interes), idCliente};
         boolean validate = true;
 
         for (String value : campos) {
-            if (value.length() < 2) {
+            if (value.length() < 0) {
                 validate = false;
             }
         }
 
         if (validate) {
             AbstraccionProductos.agregarProducto(campos);
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "faltan campos");
         }
 
     }
-    
-  
 
-   public void getDataClient(){
-       
-        String query = " SELECT cliente.id, cliente.nombre, cliente.telefono , cliente.email,\n"
-                + " id as cantidadProdutos \n"
-                + "FROM cliente";
-  
-        if(InstanciaADMIN.Bot.getClientes(query)){
-                ArrayList<Object[]> dataToShow =  InstanciaADMIN.Bot.getDataClienteOrClientes();
-                for (Object d[] : dataToShow ){
-                    this.model.addElement(dataToShow.get(1));
-                    System.out.println(dataToShow);
-                    ComboClient.setModel(this.model);
-                }
-                 
-        }else{
+    public void getDataClient() {
+
+        String query = " SELECT cliente.id, cliente.nombre, cliente.telefono , cliente.email\n"
+                +"FROM cliente";
+
+        if (InstanciaADMIN.Bot.getClientes(query)) {
+            ArrayList<Object[]> dataToShow = InstanciaADMIN.Bot.getDataClienteOrClientes();
+            for (Object d[] : dataToShow) {
+                this.model.addElement(d[0]);
+                System.out.println(dataToShow);
+                ComboClient.addItem(d[0]);
+                ComboClient.setModel(this.model);
+            }
+
+        } else {
             JOptionPane.showMessageDialog(null, "Fallo en la consulta");
-       }
-    } 
-    
-   
-    
-    
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -155,19 +156,19 @@ public class DialogAñadir extends javax.swing.JDialog {
         TxtNombreA.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         TxtNombreA.setPlaceholder("Añade nombre de articulo");
         jPanel1.add(TxtNombreA);
-        TxtNombreA.setBounds(218, 114, 200, 29);
+        TxtNombreA.setBounds(250, 120, 200, 29);
 
         validoHasta.setBackground(new java.awt.Color(51, 102, 255));
         validoHasta.setBgColor(new java.awt.Color(51, 102, 255));
         validoHasta.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jPanel1.add(validoHasta);
-        validoHasta.setBounds(218, 154, 290, 26);
+        validoHasta.setBounds(250, 150, 290, 26);
 
         SpinnerF.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         SpinnerF.setModel(new javax.swing.SpinnerNumberModel(0, null, null, 100));
         SpinnerF.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(0, 204, 255), new java.awt.Color(0, 204, 255)));
         jPanel1.add(SpinnerF);
-        SpinnerF.setBounds(220, 190, 140, 18);
+        SpinnerF.setBounds(220, 190, 140, 32);
 
         ComboClient.setBackground(new java.awt.Color(51, 102, 255));
         ComboClient.setColorArrow(new java.awt.Color(51, 102, 255));
@@ -182,32 +183,32 @@ public class DialogAñadir extends javax.swing.JDialog {
         SpinnerI.setModel(new javax.swing.SpinnerNumberModel(0, null, null, 100));
         SpinnerI.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(0, 204, 255), new java.awt.Color(0, 204, 255)));
         jPanel1.add(SpinnerI);
-        SpinnerI.setBounds(220, 220, 140, 18);
+        SpinnerI.setBounds(220, 220, 140, 32);
 
         jLabel6.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jLabel6.setText("Nombre de articulo");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(80, 120, 120, 20);
+        jLabel6.setBounds(80, 120, 140, 20);
 
         jLabel7.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jLabel7.setText("Fecha limite ");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(110, 160, 80, 20);
+        jLabel7.setBounds(110, 160, 100, 20);
 
         jLabel8.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jLabel8.setText("Costo inicial");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(110, 190, 68, 20);
+        jLabel8.setBounds(110, 190, 100, 20);
 
         jLabel9.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jLabel9.setText("Interés");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(130, 220, 50, 20);
+        jLabel9.setBounds(130, 220, 60, 20);
 
         jLabel10.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         jLabel10.setText("Cliente");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(130, 260, 60, 20);
+        jLabel10.setBounds(130, 260, 70, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 670, 470);
@@ -217,17 +218,17 @@ public class DialogAñadir extends javax.swing.JDialog {
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
 
-      
         this.dispose();
     }//GEN-LAST:event_BackBtnActionPerformed
 
     private void Agregar_artActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_artActionPerformed
         validarAndCrear();
     }//GEN-LAST:event_Agregar_artActionPerformed
-    
-    public void alerta(String Mensaje){
+
+    public void alerta(String Mensaje) {
         JOptionPane.showMessageDialog(null, Mensaje);
     }
+
     /**
      * @param args the command line arguments
      */

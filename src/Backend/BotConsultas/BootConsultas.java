@@ -101,8 +101,8 @@ public class BootConsultas {
             
             while (rs.next()) {
                 String[] dataCruda = {String.valueOf(rs.getInt("id")), String.valueOf(rs.getString("nombre")),
-                    String.valueOf(rs.getString("telefono")), String.valueOf(rs.getString("email")),
-                    String.valueOf(rs.getInt("cantidadProdutos"))
+                    String.valueOf(rs.getString("telefono")), String.valueOf(rs.getString("email"))
+//                        ,String.valueOf(rs.getInt("cantidadProdutos"))
                 };
              
                 dataClienteOrClientes.add(dataCruda);

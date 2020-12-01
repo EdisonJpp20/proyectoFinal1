@@ -64,7 +64,7 @@ public class Addcliente extends javax.swing.JDialog {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/documento.png"))); // NOI18N
         jLabel5.setText("Añade un nuevo cliente!");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(14, 19, 244, 64);
+        jLabel5.setBounds(14, 19, 295, 64);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 530, 90);
@@ -92,7 +92,7 @@ public class Addcliente extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         jLabel3.setText("Telefono:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 340, 69, 32);
+        jLabel3.setBounds(10, 340, 140, 22);
 
         TxtCorreo.setForeground(new java.awt.Color(51, 153, 255));
         TxtCorreo.setBorderColor(new java.awt.Color(51, 153, 255));
@@ -105,7 +105,7 @@ public class Addcliente extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         jLabel2.setText("Email: ");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 240, 49, 32);
+        jLabel2.setBounds(10, 240, 140, 22);
 
         TxtName.setForeground(new java.awt.Color(51, 153, 255));
         TxtName.setBorderColor(new java.awt.Color(51, 153, 255));
@@ -118,7 +118,7 @@ public class Addcliente extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         jLabel1.setText("Nombre:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 150, 65, 32);
+        jLabel1.setBounds(10, 150, 140, 22);
 
         Salir.setBackground(new java.awt.Color(255, 51, 51));
         Salir.setText("Salir");

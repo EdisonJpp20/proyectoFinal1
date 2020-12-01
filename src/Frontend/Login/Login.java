@@ -94,7 +94,6 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         rSButtonShape1.setBackground(new java.awt.Color(51, 102, 255));
-        rSButtonShape1.setBorder(null);
         rSButtonShape1.setText("Entrar");
         rSButtonShape1.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         rSButtonShape1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +115,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 102, 255));
         jLabel2.setText("Iniciar Sesion");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(242, 82, 148, 42);
+        jLabel2.setBounds(242, 82, 240, 30);
 
         rSTextFieldMaterialIcon1.setForeground(new java.awt.Color(51, 102, 255));
         rSTextFieldMaterialIcon1.setColorIcon(new java.awt.Color(51, 102, 255));
