@@ -101,7 +101,7 @@ ArrayList<String> dataToShow;
         public boolean eliminarProducto() {
         if (rSTableMetroCustom1.getSelectedRow() != -1) {
             int index = rSTableMetroCustom1.getSelectedRow();
-            int id = (int) model.getValueAt(index, 0);
+            int id = (int) Integer.parseInt(String.valueOf((Object) model.getValueAt(index, 0)));
             String query = "DELETE FROM producto where productoId =" + id;
             if (InstanciaADMIN.Bot.bootAgregarEliminarActualizar(query)) {
                alerta("Eliminado correctamente");
